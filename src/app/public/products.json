@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Smart Watch",
+    "description": "A sleek watch to track your health and notifications.",
+    "price": 199.99,
+    "details": "Full features: heart rate monitor, GPS, waterproof, long battery life."
+  },
+  {
+    "id": 2,
+    "name": "Wireless Earbuds",
+    "description": "High-quality earbuds with noise cancellation.",
+    "price": 149.99,
+    "details": "Features: 30h battery, wireless charging, Bluetooth 5.2, ergonomic design."
+  },
+  {
+    "id": 3,
+    "name": "Gaming Laptop",
+    "description": "Powerful laptop for gaming and content creation.",
+    "price": 1299.99,
+    "details": "Specs: Intel i7, 16GB RAM, RTX 3060, 512GB SSD, 144Hz display."
+  }
+]
