@@ -3,8 +3,10 @@
 import { useState } from "react";
 
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { db } from "@/app/firebase/firebase.init";
 import ProtectedPage from "@/app/Components/ProtectedPage";
+import { db } from "@/app/firebase/firebase.init";
+
+
 
 export default function AddProductPage() {
   const [product, setProduct] = useState({ name: "", description: "", price: "" });

@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { auth } from "@/lib/firebase";
+import { auth } from "../firebase/firebase.init";
+
 
 export default function ProtectedPage({ children }) {
   const router = useRouter();
