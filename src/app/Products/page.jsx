@@ -1,11 +1,8 @@
 "use client";
-
 import { useEffect, useState } from "react";
-
-
 import { collection, getDocs, query, orderBy } from "firebase/firestore";
-import { db } from "../firebase/firebase.init";
-import ProductCard from "../Components/ProductCard";
+import { db } from "@/firebase/firebase.init";
+import ProductCard from "@/components/ProductCard";
 
 export default function ProductsPage() {
   const [products, setProducts] = useState([]);
@@ -14,10 +11,8 @@ export default function ProductsPage() {
     const fetchProducts = async () => {
       const q = query(collection(db, "products"), orderBy("createdAt", "desc"));
       const snapshot = await getDocs(q);
-      const productsList = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-      setProducts(productsList);
+      setProducts(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
     };
-
     fetchProducts();
   }, []);
 

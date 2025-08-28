@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Findings - Next.js + Firebase Product App
 
-## Getting Started
+**Live Demo:** [https://findings.vercel.app](https://findings.vercel.app)
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Findings is a modern, responsive product management application built with **Next.js 15 (App Router)** and **Firebase**. It features both public and protected pages with authentication via **Firebase Google Sign-In**.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Users can:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Browse a landing page with hero, product highlights, and footer.
+- View a list of products fetched from Firebase.
+- See detailed information for individual products.
+- Log in using Google and access a protected page to add new products.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Core Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 1. Landing Page (`/`)
+- **Sections:** Navbar, Hero, Product Highlights, Footer
+- Navigation to Login and Products
+- Publicly accessible
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 2. Login Page (`/login`)
+- Google authentication via Firebase
+- Redirects to `/products` on successful login
 
-## Deploy on Vercel
+### 3. Product List Page (`/products`)
+- Publicly accessible
+- Fetches products from Firebase Firestore
+- Shows product name, description, price, and "View Details" button
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 4. Product Details Page (`/products/[id]`)
+- Displays full details of a single product
+- Publicly accessible
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 5. Protected Add Product Page (`/add-product`)
+- Only accessible when logged in
+- Form to add a new product (name, description, price)
+- Stores data in Firebase Firestore
+- Shows success toast after adding
+
+### Optional Enhancements
+- Theme toggle (light/dark mode)
+- Responsive design
+- Loading spinners and toast notifications
+
+---
+
+## Technologies Used
+- **Next.js 15** (App Router)
+- **React**
+- **Firebase** (Auth & Firestore)
+- **Tailwind CSS** for styling
+- **Vercel** for deployment
+
+---
+
+## Folder Structure
+
